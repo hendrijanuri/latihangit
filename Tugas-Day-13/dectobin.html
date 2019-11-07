@@ -1,0 +1,26 @@
+<body text="#9C94F4" bgcolor="#800080">
+    <FORM name="DecToBin">
+        Konversi Bilangan Desimal ke Biner</br>
+        Masukkan Angka:
+        </br>
+        <INPUT name="deci" size=35 style="background-color: #9C94F4"> </br>
+        &nbsp;<font color="#9C94F4">
+            <INPUT type="button" value="Go" onclick="toBiner()" style="color: #9C94F4; background-color: #000000">
+        </font>
+    </FORM>
+
+<SCRIPT language="JavaScript">
+    function toBiner() {
+        i = document.DecToBin.deci.value; // ambil bil desimal  
+        var hit = "";
+        while (i >= 1) {
+            hit += i % 2; //modulus kan i sampai 1 tidak lebih samadengan 1 
+            i = i >> 1; //geser ke kanan biner 1 misal 11=1011 di geser jadi 0101 jadi 5,kalau 10=1010 jadi 0101=5 
+        };
+        var b = "";
+        for (a = hit.length; a >= 0; a--) {
+            b += hit.substring(a - 1, a); //balik string hit,misal 0101 jadi 1010 
+        };
+        document.DecToBin.deci.value = b; //tampilkan  
+    } 
+</SCRIPT>
